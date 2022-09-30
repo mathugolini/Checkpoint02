@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com</groupId>
-	<artifactId>Produto</artifactId>
+	<artifactId>Email</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Produto</name>
+	<name>Email</name>
 	<description>API de Email</description>
 	<properties>
 		<java.version>1.8</java.version>
