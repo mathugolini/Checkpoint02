@@ -1,5 +1,6 @@
 package br.com.email.command;
 
+import java.time.Instant;
 import java.util.List;
 
 import br.com.email.model.Email;
@@ -12,6 +13,9 @@ public class ListaComandos {
 	}
 	
 	public Email criaEmail(EmailRepository emailRepository, Email email) {
+		if (email.getDataEmail() == null)
+			email.setDataEmail(Instant.now());
+		
 		return emailRepository.save(email);
 	}
 
@@ -24,7 +28,7 @@ public class ListaComandos {
 	public Email updateEmail(EmailRepository emailRepository, Long id, Email novoEmail) {
 		
 		Email email = emailRepository.getById(id);
-     
+		
 		email.setDataEmail(novoEmail.getDataEmail());
 		email.setAssuntoEmail(novoEmail.getAssuntoEmail());
 		email.setStatus(novoEmail.getStatus());
